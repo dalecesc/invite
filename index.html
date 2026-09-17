@@ -15,12 +15,20 @@ body:before{content:"";position:fixed;inset:12px;border:1px solid rgba(199,164,9
 .hero-inner{position:relative;z-index:2;padding:30px}.eyebrow{letter-spacing:.35em;font-size:10px;text-transform:uppercase;color:var(--champ)}h1{font:500 clamp(65px,14vw,150px)/.72 "Cormorant Garamond",serif;margin:30px 0 20px}h1 span{display:block;font-size:.35em;font-style:italic;margin:28px 0}.date{font:500 18px "Cormorant Garamond";letter-spacing:.35em}.enter{display:inline-block;margin-top:48px;border:1px solid var(--gold);padding:14px 25px;font-size:10px;letter-spacing:.28em;color:var(--ivory);transition:.4s}.enter:hover{background:var(--gold);color:var(--wine)}
 nav{position:sticky;top:0;z-index:15;background:rgba(38,7,14,.96);color:var(--ivory);padding:14px 20px;display:flex;justify-content:center;gap:28px;font-size:9px;letter-spacing:.2em;text-transform:uppercase}nav a{opacity:.8}nav a:hover{color:var(--gold);opacity:1}
 section{padding:110px 7vw;max-width:1300px;margin:auto}.dark{max-width:none;background:var(--burg);color:var(--ivory)}.dark>div{max-width:1150px;margin:auto}.kicker{text-transform:uppercase;letter-spacing:.3em;font-size:9px;color:var(--gold);margin-bottom:20px}.title{font:500 clamp(45px,7vw,85px)/.9 "Cormorant Garamond";margin:0 0 30px}.intro{font:400 25px/1.35 "Cormorant Garamond";max-width:650px}.copy{max-width:650px;line-height:1.9;font-size:13px}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.photo{min-height:540px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25)),url('PHOTO-2023-12-25-09-03-53.jpg') center/cover}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.photo{min-height:540px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25)),url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1100&q=85') center/cover}
 .events{background:var(--burg);color:var(--ivory);max-width:none}.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.event{border:1px solid rgba(199,164,91,.5);padding:45px;min-height:280px;position:relative}.num{font:400 45px "Cormorant Garamond";color:var(--gold)}.event h3{font:500 32px "Cormorant Garamond";margin:15px 0}.event p{font-size:11px;line-height:2;letter-spacing:.1em;text-transform:uppercase}.mapbtn,.submit{display:inline-block;margin-top:15px;border:1px solid var(--gold);padding:12px 18px;font-size:9px;letter-spacing:.2em;color:var(--champ);background:transparent;cursor:pointer}
 .count{text-align:center;max-width:none;background:var(--wine);color:var(--ivory)}.timer{display:flex;justify-content:center;gap:clamp(20px,5vw,70px);margin-top:45px}.time strong{display:block;font:500 clamp(40px,7vw,75px) "Cormorant Garamond";color:var(--gold)}.time span{font-size:8px;letter-spacing:.25em;text-transform:uppercase}
 .gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:230px;gap:10px}.gallery-grid div{background:linear-gradient(135deg,#d9cbb5,#8d7465);display:grid;place-items:center;color:var(--burg);font:italic 25px "Cormorant Garamond"}.gallery-grid div:first-child{grid-row:span 2;background:linear-gradient(180deg,rgba(74,16,28,.1),rgba(74,16,28,.35)),url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85') center/cover}.gallery-grid div:nth-child(4){grid-column:span 2;background:linear-gradient(135deg,#bfa98b,#efe3ce)}
 .venue{display:grid;grid-template-columns:1.1fr .9fr;min-height:500px}.venue-img{background:url('https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=85') center/cover}.venue-info{background:var(--burg);color:var(--ivory);padding:70px}.venue-info h3{font:500 40px "Cormorant Garamond";margin:10px 0 25px}.venue-info p{font-size:12px;line-height:2}.rsvp{max-width:700px;margin:auto}.form{display:grid;gap:18px}.form input,.form textarea,.form select{width:100%;border:0;border-bottom:1px solid rgba(74,16,28,.35);background:transparent;padding:15px 5px;font:300 13px Montserrat;outline:none}.form textarea{min-height:100px}.radio{display:flex;gap:20px;flex-wrap:wrap;font-size:11px}.thanks{display:none;text-align:center;padding:50px;border:1px solid var(--gold)}footer{background:var(--wine);color:var(--champ);text-align:center;padding:50px 20px;font:italic 30px "Cormorant Garamond"}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity 1s ease,transform 1s ease}.reveal.visible{opacity:1;transform:none}
+
+/* Updated Reveal Effects */
+.reveal {opacity:0; transform:translateY(40px); filter:blur(8px); transition:opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;}
+.reveal.visible {opacity:1; transform:none; filter:blur(0);}
+
+/* New Split Effect for Gallery */
+.split-reveal {clip-path: inset(0 50% 0 50%); opacity: 0; transform: scale(0.98); transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease, transform 1.5s ease;}
+.split-reveal.visible {clip-path: inset(0 0 0 0); opacity: 1; transform: scale(1);}
+
 @media(max-width:720px){body:before{inset:7px}nav{gap:14px;overflow:auto;justify-content:flex-start;white-space:nowrap;font-size:8px}.story,.venue,.event-grid{grid-template-columns:1fr}.photo{min-height:420px}.venue-img{min-height:320px}.venue-info{padding:50px 30px}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gallery-grid div:first-child{grid-row:span 2}.gallery-grid div:nth-child(4){grid-column:span 2}.timer{gap:18px}.time strong{font-size:42px}section{padding:80px 8vw}.intro{font-size:21px}}
 </style>
 </head>
@@ -47,6 +55,16 @@ section{padding:110px 7vw;max-width:1300px;margin:auto}.dark{max-width:none;back
 <div class="photo reveal"></div><div class="reveal"><div class="kicker">Our story</div><h2 class="title">Written in moments.</h2><p class="copy">Some stories are written in moments. Ours is written in memories. This space is reserved for your story — how you met, the moments that brought you closer, and the chapter that led you here.</p><p class="copy">Replace this text with your own words when the final website is ready.</p></div>
 </section>
 
+<!-- New Childhood Section -->
+<section id="childhood" class="story" style="padding-top:0;">
+<div class="reveal">
+<div class="kicker">Where it began</div>
+<h2 class="title">We've known each other since we were eight.</h2>
+<p class="copy">From catechism to walking down the aisle, our journey has been the greatest adventure. From talking for hours outside the church every Sunday, to now beginning our new journey together in this same church.</p>
+</div>
+<div class="photo reveal" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.25)),url('group-photo.jpg') center/cover"></div>
+</section>
+
 <section id="events" class="events"><div class="reveal"><div class="kicker">The celebrations</div><h2 class="title">Save the date.</h2>
 <div class="event-grid">
 <article class="event"><div class="num">01</div><h3>Wedding Ceremony</h3><p>12 December 2026<br>11:00 AM<br>Holy Cross Church, Santa Cruz</p><a class="mapbtn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Holy+Cross+Church+Santa+Cruz+Goa">GET DIRECTIONS →</a></article>
@@ -57,7 +75,13 @@ section{padding:110px 7vw;max-width:1300px;margin:auto}.dark{max-width:none;back
 <div class="time"><strong id="days">0</strong><span>Days</span></div><div class="time"><strong id="hours">0</strong><span>Hours</span></div><div class="time"><strong id="mins">0</strong><span>Minutes</span></div><div class="time"><strong id="secs">0</strong><span>Seconds</span></div>
 </div></div></section>
 
-<section id="gallery" class="reveal"><div class="kicker">Moments</div><h2 class="title">A glimpse of us.</h2><div class="gallery-grid"><div></div><div>Photo</div><div>Photo</div><div>Photo</div><div>Photo</div></div></section>
+<section id="gallery">
+<div class="reveal"><div class="kicker">Moments</div><h2 class="title">A glimpse of us.</h2></div>
+<!-- Updated Gallery with split-reveal class -->
+<div class="gallery-grid split-reveal">
+<div></div><div>Photo</div><div>Photo</div><div>Photo</div><div>Photo</div>
+</div>
+</section>
 
 <section id="venue" class="venue">
 <div class="venue-img reveal"></div><div class="venue-info reveal"><div class="kicker">The celebration</div><h3>Penha de Franca Hall</h3><p>12 December 2026<br>5:30 PM</p><p>This space can hold venue information, parking details, accommodation suggestions and anything your guests need to know.</p><a class="mapbtn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Penha+de+Franca+Hall+Goa">VIEW LOCATION →</a></div>
@@ -74,7 +98,8 @@ const target=new Date("2026-12-12T11:00:00+05:30").getTime();
 function tick(){let d=Math.max(0,target-Date.now()),s=Math.floor(d/1000);days.textContent=Math.floor(s/86400);hours.textContent=Math.floor(s%86400/3600);mins.textContent=Math.floor(s%3600/60);secs.textContent=s%60}
 tick();setInterval(tick,1000);
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+/* Updated Observer to track the new split-reveal class */
+document.querySelectorAll('.reveal, .split-reveal').forEach(x=>obs.observe(x));
 document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();e.target.style.display='none';document.getElementById('thanks').style.display='block'});
 </script>
 </body>
